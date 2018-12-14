@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNETCoreSwaggerDemo.Controllers
@@ -59,10 +60,33 @@ namespace ASPNETCoreSwaggerDemo.Controllers
         {
         }
 
+        [HttpPost]
+        [Route("upload")]
+        public void PostFile(IFormFile uploadedFile)
+        {
+            //TODO: Save file
+        }
+
+        [HttpPost]
+        [Route("UploadFile")]
+        public void UploadFile(UploadModel model)
+        {
+            //todo: save file
+        }
+
         public enum ValueType
         {
             Number,
             Text
         }
+    }
+
+    public class UploadModel
+    {
+
+        public string Title { get; set; }
+
+        public IFormFile File { get; set; }
+
     }
 }

@@ -41,6 +41,7 @@ namespace ASPNETCoreSwaggerDemo
                 });
                 c.IncludeXmlComments(GetXmlCommentsPath());
                 c.DescribeAllEnumsAsStrings();
+                c.OperationFilter<FormFileSwaggerFilter>(); //Register File Upload Operation Filter>
             });
         }
 
